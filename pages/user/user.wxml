@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="user-info">
+    <image class="avatar" src="{{avatarUrl}}"></image>
+    <text class="name">{{nickName}}</text>
+    <text class="location" wx:if="{{city.length}}">{{city}} - {{province}}</text>
+  </view>
+</view>

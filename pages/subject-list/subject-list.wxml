@@ -1,0 +1,17 @@
+<scroll-view scroll-y="true" lower-threshold="200" style="height: 100%;" bindscrolltolower="scrollHandler">
+  <view class="list-item" wx:for="{{movies}}" wx:for-item="movieData" wx:key="{{index}}">
+    <view class="movie-item" wx:for="{{movieData}}" wx:key="{{item._id}}" bindtap="gotoDetail" data-id="{{item._id}}">
+      <image class="poster" lazy-load="true" mode="widthFix" src="{{item.poster}}"></image>
+      <view class="title">
+        <text>{{item.raw_title}}<text class="rate">{{item.rate}}</text></text>
+      </view>
+      <view class='info'>
+        <text>{{item.types}} / {{item.year}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="loading" wx:if="{{loading}}">
+    <image src="/assets/loading/loading-bars.svg"></image>
+  </view>
+</scroll-view>
